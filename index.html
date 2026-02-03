@@ -7,15 +7,15 @@
 body{
   margin:0;
   height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url("bg1.jpg") center/cover no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
   font-family:Arial,sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("bg1.jpg") center/cover no-repeat;
+  transition: background 0.8s ease;
   overflow:hidden;
-  transition:background-image 1s ease-in-out;
 }
 
 .card{
@@ -41,59 +41,13 @@ button{
 #no{
   background:#ddd;
   position:absolute;
-  transition:top 0.35s ease, left 0.35s ease;
+  transition: top 0.4s ease, left 0.4s ease;
 }
 </style>
 </head>
 
 <body>
 <div class="card" id="card">
-  <h2>Hey B👽</h2>
-  <p>I made this just for you 💗</p>
-  <button onclick="showQuestion()">Open</button>
-</div>
-
-<script>
-const backgrounds=["bg1.jpg","bg2.jpg","bg3.jpg"];
-let bgIndex=0;
-
-setInterval(()=>{
-  bgIndex=(bgIndex+1)%backgrounds.length;
-  document.body.style.backgroundImage=
-    `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(${backgrounds[bgIndex]})`;
-},6000);
-
-function showQuestion(){
-  const card=document.getElementById("card");
-  card.innerHTML=`
-    <h2>So… 😳</h2>
-    <p>Will you be my Girlfriend?</p>
-    <button id="yes" onclick="yesClicked()">YES 💖</button>
-    <button id="no">NO 🙈</button>
-  `;
-
-  const noBtn=document.getElementById("no");
-
-  document.addEventListener("mousemove",(e)=>{
-    const rect=noBtn.getBoundingClientRect();
-    const distance=Math.hypot(e.clientX-rect.left,e.clientY-rect.top);
-
-    if(distance<120){
-      const x=Math.random()*(window.innerWidth-120);
-      const y=Math.random()*(window.innerHeight-60);
-      noBtn.style.left=x+"px";
-      noBtn.style.top=y+"px";
-    }
-  });
-}
-
-function yesClicked(){
-  document.getElementById("card").innerHTML=`
-    <h2>YAYYY 🥰</h2>
-    <p>I knew you'd say yes ❤️
-       LOVE YOU 😘</p>
-  `;
-}
-</script>
-</body>
-</html>
+  <h2>Hey 👋</h2>
+  <p>I made this just for you 💖</p>
+  <button onclick="showQuestion()">Op
