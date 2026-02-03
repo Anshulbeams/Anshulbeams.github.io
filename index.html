@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You 💙</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #yes {
+    background: #ff4b5c;
+    color: white;
+  }
+
+  #no {
+    background: #ccc;
+    position: absolute;
+  }
+</style>
+</head>
+
+<body>
+  <div class="card">
+    <h2>Hey 👋</h2>
+    <p>I made this just for you 💖</p>
+    <button onclick="showQuestion()">Open</button>
+  </div>
+
+<script>
+  function showQuestion() {
+    document.querySelector('.card').innerHTML = `
+      <h2>So… 😳</h2>
+      <p>Will you be my Girlfriend?</p>
+      <button id="yes" onclick="yesClicked()">YES 💖</button>
+      <button id="no">NO 🙈</button>
+    `;
+
+    const noBtn = document.getElemen
