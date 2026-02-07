@@ -11,20 +11,25 @@ body{
   justify-content:center;
   align-items:center;
   font-family:Arial,sans-serif;
-  background:
-    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-    url("bg1.jpg") center/cover no-repeat;
-  transition: background 0.8s ease;
+  background: linear-gradient(135deg, #ffe6eb, #ffd6e0);
   overflow:hidden;
 }
 
 .card{
-  background:rgba(255,255,255,0.95);
-  padding:35px;
+  background:rgba(255,255,255,0.97);
+  padding:30px;
   border-radius:18px;
   text-align:center;
   width:320px;
-  box-shadow:0 15px 30px rgba(0,0,0,0.3);
+  box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card img{
+  width:100%;
+  max-height:180px;
+  object-fit:contain;
+  border-radius:12px;
+  margin:15px 0;
 }
 
 button{
@@ -36,7 +41,10 @@ button{
   margin:10px;
 }
 
-#yes{background:#ff4b5c;color:white;}
+#yes{
+  background:#ff5c8a;
+  color:white;
+}
 
 #no{
   background:#ddd;
@@ -50,20 +58,16 @@ button{
 <div class="card" id="card">
   <h2>Hey 👋</h2>
   <p>I made this just for you 💖</p>
+  <img src="cute.gif" alt="cute gif">
   <button onclick="showQuestion()">Open</button>
 </div>
 
 <script>
-function setBackground(img){
-  document.body.style.background =
-    `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("${img}") center/cover no-repeat`;
-}
-
 function showQuestion(){
-  setBackground("bg2.jpg");
   const card=document.getElementById("card");
   card.innerHTML=`
     <h2>So… 😳</h2>
+    <img src="cute.gif" alt="cute gif">
     <p>Will you go out with me?</p>
     <button id="yes" onclick="yesClicked()">YES 💖</button>
     <button id="no">NO 🙈</button>
@@ -81,9 +85,9 @@ function showQuestion(){
 }
 
 function yesClicked(){
-  setBackground("bg3.jpg");
   document.getElementById("card").innerHTML=`
     <h2>YAYYY 🥰</h2>
+    <img src="yes.gif" alt="yes celebration gif">
     <p>I knew you'd say yes ❤️</p>
   `;
 }
